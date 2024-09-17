@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ExamenMvvm"
+             xmlns:viewModels="clr-namespace:ExamenMvvm.ViewModels"
+             x:Class="ExamenMvvm.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewModels:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20">
+        <Label Text="Producto 1" />
+        <Entry Text="{Binding Product1, Mode=TwoWay}" Keyboard="Numeric" />
+
+        <Label Text="Producto 2" />
+        <Entry Text="{Binding Product2, Mode=TwoWay}" Keyboard="Numeric" />
+
+        <Label Text="Producto 3" />
+        <Entry Text="{Binding Product3, Mode=TwoWay}" Keyboard="Numeric" />
+
+        <Label Text="Subtotal" />
+        <Entry Text="{Binding Subtotal, Mode=OneWay}" IsReadOnly="True" />
+
+        <Label Text="Descuento" />
+        <Entry Text="{Binding Discount, Mode=OneWay}" IsReadOnly="True" />
+
+        <Label Text="Total a Pagar" />
+        <Entry Text="{Binding TotalToPay, Mode=OneWay}" IsReadOnly="True" />
+
+        <Button Text="Calcular" Command="{Binding CalculateCommand}" />
+        <Button Text="Limpiar" Command="{Binding ClearCommand}" />
+    </StackLayout>
+</ContentPage>
